@@ -1,7 +1,25 @@
-import { Shield, Globe, Linkedin, Mail, Mountain } from 'lucide-react';
+import { Shield, Globe, Linkedin, Mail, Mountain, Share2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'CoSocial Mining | Proyecto Maricunga',
+          text: 'Plataforma de inversión en activos mineros estratégicos en Chile.',
+          url: window.location.href,
+        });
+      } catch (err) {
+        console.error('Error sharing:', err);
+      }
+    } else {
+      // Fallback for desktop: Copy to clipboard
+      navigator.clipboard.writeText(window.location.href);
+      alert('Enlace copiado al portapapeles');
+    }
+  };
+
   return (
     <footer className="bg-brand-primary text-white py-16 border-t border-slate-800">
       <div className="container mx-auto px-6">
@@ -19,12 +37,19 @@ export default function Footer() {
               Un proyecto de CoSocial Mining centrado en la transición energética global.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-accent transition-all">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-accent transition-all">
                 <Linkedin className="w-5 h-5" />
               </a>
               <a href="mailto:contacto@proyectomaricunga.cl" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-accent transition-all">
                 <Mail className="w-5 h-5" />
               </a>
+              <button 
+                onClick={handleShare}
+                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-accent transition-all cursor-pointer"
+                title="Compartir Web"
+              >
+                <Share2 className="w-5 h-5" />
+              </button>
             </div>
           </div>
 

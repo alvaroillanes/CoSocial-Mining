@@ -4,9 +4,9 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 
 export default function Hero() {
   const images = [
-    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2500",
-    "https://images.unsplash.com/photo-1533167649158-6d508895b680?auto=format&fit=crop&q=80&w=2500",
-    "https://images.unsplash.com/photo-1596272213702-8f19293f0b2f?auto=format&fit=crop&q=80&w=2500"
+    "https://images.unsplash.com/photo-1528659104051-78937964dfb3?auto=format&fit=crop&q=80&w=2500", // Desierto Florido / Atacama
+    "https://images.unsplash.com/photo-1542614391-76610fb96035?auto=format&fit=crop&q=80&w=2500", // Alpaca/Fauna in Desert
+    "https://images.unsplash.com/photo-1596272213702-8f19293f0b2f?auto=format&fit=crop&q=80&w=2500"  // Mining exploration/Desert
   ];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -18,23 +18,23 @@ export default function Hero() {
   }, [images.length]);
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-brand-primary font-sans">
+    <section id="inicio" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-slate-900 font-sans">
       {/* High-Impact Professional Background Slider */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <AnimatePresence>
+        <AnimatePresence initial={false}>
           <motion.img
             key={currentImageIndex}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 0.7, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.6 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 2.5, ease: "linear" }}
+            transition={{ duration: 1.5 }}
             src={images[currentImageIndex]}
-            alt="Mining Territories"
+            alt="Minería en Chile"
             className="absolute inset-0 w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
         </AnimatePresence>
-        <div className="absolute inset-0 bg-linear-to-b from-brand-primary/95 via-brand-primary/20 to-brand-primary" />
+        <div className="absolute inset-0 bg-linear-to-b from-slate-900/80 via-transparent to-slate-900" />
       </div>
 
       <div className="container relative z-10 mx-auto px-6 xl:px-4 max-w-(--breakpoint-2xl)">

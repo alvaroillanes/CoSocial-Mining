@@ -1,7 +1,6 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-import helmet from "helmet";
 import { rateLimit } from "express-rate-limit";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -11,19 +10,22 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
-  // Security headers
-  app.use(helmet({
-    contentSecurityPolicy: false, // Vite needs inline scripts in dev
-  }));
-
   // Rate limiting
   const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    limit: 100, // Limit each IP to 100 requests per `window`
+    limit: 1000, // Increase limit for dev
     standardHeaders: 'draft-7',
     legacyHeaders: false,
   });
   app.use("/api/", limiter);
+
+  // Disable caching for development
+  app.use((req, res, next) => {
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+    next();
+  });
 
   // Health check
   app.get("/api/health", (req, res) => {

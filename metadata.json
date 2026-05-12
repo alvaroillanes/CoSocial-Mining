@@ -1,6 +1,6 @@
 {
   "name": "CoSocial Mining - Proyecto Maricunga",
   "description": "Plataforma de inversión en activos mineros estratégicos (Litio, Tierras Raras) en Chile. Un proyecto de CoSocial Mining.",
-  "requestFramePermissions": [],
+  "requestFramePermissions": ["web-share"],
   "majorCapabilities": []
 }
