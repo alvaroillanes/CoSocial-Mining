@@ -1,0 +1,58 @@
+{
+  "entities": {
+    "Lead": {
+      "title": "Lead",
+      "description": "Potential investor contact information and interest details",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "interestLevel": { "type": "string", "enum": ["low", "medium", "high"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "userId": { "type": "string" }
+      },
+      "required": ["email", "createdAt"]
+    },
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "Public and private user account information",
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "photoURL": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "DueDiligence": {
+      "title": "Due Diligence",
+      "description": "Compliance data for formal investment participation",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "rut": { "type": "string" },
+        "address": { "type": "string" },
+        "occupation": { "type": "string" },
+        "sourceOfFunds": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "verified"] },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "rut", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/leads/{leadId}": {
+      "schema": "Lead",
+      "description": "Collection of prospective investors"
+    },
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Individual user accounts"
+    },
+    "/dueDocs/{userId}": {
+      "schema": "DueDiligence",
+      "description": "Compliance records tied to user IDs"
+    }
+  }
+}
