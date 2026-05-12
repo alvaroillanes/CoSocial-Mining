@@ -67,10 +67,9 @@ export default function ProjectInfo() {
               className="relative p-6 bg-slate-50 border border-slate-200 rounded-2xl shadow-sm"
             >
               <img 
-                src="https://images.unsplash.com/photo-1596272213702-8f19293f0b2f?auto=format&fit=crop&q=80&w=2000" 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Mina_de_Chuquicamata%2C_Calama%2C_Chile%2C_2016-02-01%2C_DD_110-112_PAN.JPG/1280px-Mina_de_Chuquicamata%2C_Calama%2C_Chile%2C_2016-02-01%2C_DD_110-112_PAN.JPG" 
                 alt="Operaciones Mineras"
                 className="w-full aspect-square object-cover rounded-xl shadow-lg mb-8"
-                referrerPolicy="no-referrer"
               />
               <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
                 <div className="flex items-center justify-between mb-2">

@@ -4,9 +4,9 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 
 export default function Hero() {
   const images = [
-    "https://images.unsplash.com/photo-1528659104051-78937964dfb3?auto=format&fit=crop&q=80&w=2500", // Desierto Florido / Atacama
-    "https://images.unsplash.com/photo-1542614391-76610fb96035?auto=format&fit=crop&q=80&w=2500", // Alpaca/Fauna in Desert
-    "https://images.unsplash.com/photo-1596272213702-8f19293f0b2f?auto=format&fit=crop&q=80&w=2500"  // Mining exploration/Desert
+    "https://upload.wikimedia.org/wikipedia/commons/3/30/Desierto_florido.jpg", // Desierto Florido Atacama
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Guanaco_%28Lama_guanicoe%29_Leona_Amarga.jpg/1280px-Guanaco_%28Lama_guanicoe%29_Leona_Amarga.jpg", // Guanaco/Alpaca
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Mina_de_Chuquicamata%2C_Calama%2C_Chile%2C_2016-02-01%2C_DD_110-112_PAN.JPG/1280px-Mina_de_Chuquicamata%2C_Calama%2C_Chile%2C_2016-02-01%2C_DD_110-112_PAN.JPG"  // Minería / Chuquicamata
   ];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -25,16 +25,17 @@ export default function Hero() {
           <motion.img
             key={currentImageIndex}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.6 }}
+            animate={{ opacity: 0.7 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
             src={images[currentImageIndex]}
             alt="Minería en Chile"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover grayscale-[10%]"
             referrerPolicy="no-referrer"
           />
         </AnimatePresence>
-        <div className="absolute inset-0 bg-linear-to-b from-slate-900/80 via-transparent to-slate-900" />
+        <div className="absolute inset-0 bg-slate-900/40" />
+        <div className="absolute inset-0 bg-linear-to-b from-slate-900/70 via-transparent to-slate-900" />
       </div>
 
       <div className="container relative z-10 mx-auto px-6 xl:px-4 max-w-(--breakpoint-2xl)">

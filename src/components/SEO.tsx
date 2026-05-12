@@ -11,7 +11,7 @@ interface SEOProps {
 export default function SEO({ title, description, image, url }: SEOProps) {
   const siteName = "CoSocial Mining";
   const fullTitle = `${title} | ${siteName}`;
-  const defaultImage = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2500";
+  const defaultImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Valle_della_Luna_01.jpg/1280px-Valle_della_Luna_01.jpg";
   const canonical = url ? `https://ais-pre-4hezmwvfimogp744rcxx6f-27598593417.us-east1.run.app${url}` : undefined;
 
   return (
