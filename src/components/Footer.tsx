@@ -21,74 +21,59 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-brand-primary text-white py-16 border-t border-slate-800">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-slate-950 text-white py-20 border-t border-white/5">
+      <div className="container mx-auto px-6 max-w-(--breakpoint-2xl)">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
           {/* Logo and About */}
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 bg-white/10 rounded flex items-center justify-center">
-                <Mountain className="text-brand-accent w-5 h-5" />
-              </div>
-              <span className="font-sans text-xl font-extrabold tracking-tight">COSOCIAL <span className="text-brand-accent">MINING</span></span>
+          <div className="md:col-span-12 lg:col-span-4">
+            <div className="flex items-center gap-3 mb-8">
+              <Mountain className="text-brand-accent w-8 h-8" />
+              <span className="font-sans text-2xl font-black tracking-tight uppercase">COSOCIAL <span className="text-brand-accent">MINING</span></span>
             </div>
-            <p className="text-slate-400 max-w-sm mb-6 font-medium text-sm leading-relaxed">
-              Desarrollando el potencial minero de Chile. 
-              Un proyecto de CoSocial Mining centrado en la transición energética global.
+            <p className="text-slate-400 max-w-sm mb-8 text-lg font-medium leading-relaxed">
+              Buscamos democratizar el acceso a la información y oportunidades en el sector minero chileno.
             </p>
             <div className="flex gap-4">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-accent transition-all">
-                <Linkedin className="w-5 h-5" />
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center hover:bg-brand-accent transition-all group">
+                <Linkedin className="w-6 h-6 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="mailto:contacto@proyectomaricunga.cl" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-accent transition-all">
-                <Mail className="w-5 h-5" />
+              <a href="mailto:contacto@cosocialmining.cl" className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center hover:bg-brand-accent transition-all group">
+                <Mail className="w-6 h-6 group-hover:scale-110 transition-transform" />
               </a>
-              <button 
-                onClick={handleShare}
-                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-accent transition-all cursor-pointer"
-                title="Compartir Web"
-              >
-                <Share2 className="w-5 h-5" />
-              </button>
             </div>
           </div>
 
           {/* Links */}
-          <div>
-            <h4 className="font-bold mb-6 uppercase text-[10px] tracking-[0.2em] text-slate-500">Navegación</h4>
-            <ul className="space-y-4 text-slate-400 text-sm font-semibold">
-              <li><Link to="/" className="hover:text-brand-accent transition-colors">Inicio</Link></li>
-              <li><Link to="/oportunidad" className="hover:text-brand-accent transition-colors">Oportunidad</Link></li>
-              <li><Link to="/proyecto" className="hover:text-brand-accent transition-colors">Proyecto</Link></li>
-              <li><a href="#calendly" className="hover:text-white transition-colors text-brand-accent">Invertir Ahora</a></li>
+          <div className="md:col-span-6 lg:col-span-4">
+            <h4 className="font-black mb-8 uppercase text-xs tracking-widest text-slate-500">Navegación</h4>
+            <ul className="grid grid-cols-2 gap-4 text-slate-300 font-bold">
+              <li><a href="#inicio" className="hover:text-brand-accent transition-colors">Inicio</a></li>
+              <li><a href="#sobre-nosotros" className="hover:text-brand-accent transition-colors">Nosotros</a></li>
+              <li><a href="#maricunga" className="hover:text-brand-accent transition-colors">Maricunga</a></li>
+              <li><a href="#proyectos" className="hover:text-brand-accent transition-colors">Catálogo</a></li>
+              <li><a href="#como-funciona" className="hover:text-brand-accent transition-colors">Proceso</a></li>
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="font-bold mb-6 uppercase text-[10px] tracking-[0.2em] text-slate-500">Certificación</h4>
-            <ul className="space-y-4 text-slate-400 text-sm font-medium">
-              <li className="flex items-start gap-3">
-                <Shield className="w-4 h-4 text-brand-accent shrink-0" />
-                <span>Protocolos Mineros v2.0 Certificados</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Globe className="w-4 h-4 text-brand-accent shrink-0" />
-                <span>Salar de Maricunga, Atacama</span>
-              </li>
-              <li className="flex items-center gap-3 text-white font-bold">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span>Sistemas Operativos 100%</span>
-              </li>
-            </ul>
+          {/* Disclaimer (Integrated better) */}
+          <div className="md:col-span-6 lg:col-span-4">
+            <h4 className="font-black mb-8 uppercase text-xs tracking-widest text-slate-500">Legal & Riesgo</h4>
+            <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
+              <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                Este sitio tiene fines informativos. No constituye oferta pública ni recomendación financiera.
+              </p>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                CoSocial Mining actúa como facilitador de contacto entre interesados y responsables de los proyectos. Toda decisión debe ser evaluada de forma independiente.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="pt-12 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-500 text-[10px] font-bold uppercase tracking-widest">
-          <p>© 2024 COSOCIALMINING.CL • DESARROLLADO POR <a href="https://web7.cl" target="_blank" className="text-white hover:text-brand-accent transition-colors">WEB7.CL</a></p>
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 text-slate-600 text-[10px] font-black uppercase tracking-[0.2em]">
+          <p>© 2026 COSOCIALMINING.CL • TODOS LOS DERECHOS RESERVADOS</p>
           <div className="flex gap-8">
-            <a href="#" className="hover:text-white transition-colors">Framework Legal</a>
-            <a href="#" className="hover:text-white transition-colors">Privacidad de Datos</a>
+            <a href="#" className="hover:text-white transition-colors">Términos</a>
+            <a href="#" className="hover:text-white transition-colors">Privacidad</a>
           </div>
         </div>
       </div>

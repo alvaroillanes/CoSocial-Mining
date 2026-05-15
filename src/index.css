@@ -10,3 +10,9 @@
   --color-brand-bg: #F1F5F9;
 }
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+

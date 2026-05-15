@@ -8,26 +8,29 @@ import { HelmetProvider } from 'react-helmet-async';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import ProjectInfo from './components/ProjectInfo';
-import Opportunity from './components/Opportunity';
-import CalendlySection from './components/CalendlySection';
+import About from './components/About';
+import FeaturedProject from './components/FeaturedProject';
+import ProjectsCatalogue from './components/ProjectsCatalogue';
+import HowItWorks from './components/HowItWorks';
 import Footer from './components/Footer';
-import DueDiligence from './components/DueDiligence';
 import SEO from './components/SEO';
-import { AuthProvider } from './components/AuthProvider';
+import { projects } from './data/projects';
 
 function HomePage() {
+  const maricunga = projects.find(p => p.id === 'maricunga')!;
+
   return (
     <>
       <SEO 
         title="Inicio" 
-        description="CoSocial Mining conecta capital con propiedad minera real en Chile. Participa en activos estratégicos como Litio y Tierras Raras." 
+        description="CoSocial Mining conecta interesados con proyectos mineros reales en Chile. Explora activos estratégicos como Tierras Raras." 
         url="/"
       />
       <Hero />
-      <ProjectInfo />
-      <Opportunity />
-      <CalendlySection />
+      <About />
+      <FeaturedProject project={maricunga} />
+      <ProjectsCatalogue />
+      <HowItWorks />
     </>
   );
 }
@@ -36,30 +39,16 @@ function Layout() {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    // Scroll to top on route change
     window.scrollTo(0, 0);
   }, [pathname]);
 
   return (
-    <div className="bg-black font-sans selection:bg-emerald-500 selection:text-black min-h-screen">
+    <div className="bg-white font-sans min-h-screen">
       <Navbar />
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/proyecto" element={
-            <>
-              <SEO title="El Proyecto" description="Detalles técnicos y estratégicos del Proyecto Maricunga." url="/proyecto" />
-              <div className="pt-20"><ProjectInfo /></div>
-              <CalendlySection />
-            </>
-          } />
-          <Route path="/oportunidad" element={
-            <>
-              <SEO title="Oportunidad de Inversión" description="Conoce las ventajas de invertir en minería estratégica con CoSocial Mining." url="/oportunidad" />
-              <div className="pt-20"><Opportunity /></div>
-              <CalendlySection />
-            </>
-          } />
-          <Route path="/due-diligence" element={<DueDiligence />} />
         </Routes>
       </main>
       <Footer />
@@ -70,11 +59,9 @@ function Layout() {
 export default function App() {
   return (
     <HelmetProvider>
-      <AuthProvider>
-        <Router>
-          <Layout />
-        </Router>
-      </AuthProvider>
+      <Router>
+        <Layout />
+      </Router>
     </HelmetProvider>
   );
 }

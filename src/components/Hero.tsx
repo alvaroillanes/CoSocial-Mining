@@ -47,57 +47,31 @@ export default function Hero() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-accent/20 text-brand-accent rounded-full text-xs md:text-sm font-bold uppercase tracking-widest border border-brand-accent/30 mb-8 backdrop-blur-md">
               <Sparkles className="w-4 h-4" />
-              Minería con sentido, desde el territorio
+              Proyecto destacado: Salar de Maricunga (Tierras Raras)
             </div>
             
             <h1 className="font-sans text-5xl md:text-7xl xl:text-8xl font-black text-white leading-[1.05] tracking-tight mb-8">
-              Participación en <br/><span className="text-brand-accent">Activos Mineros</span>.
+              Conoce proyectos <br/><span className="text-brand-accent">mineros en desarrollo</span> en Chile
             </h1>
             
             <p className="max-w-2xl text-lg md:text-xl xl:text-2xl text-slate-200 font-medium leading-relaxed mb-12">
-              CoSocial Mining conecta capital con propiedad minera real, democratizando el acceso a activos críticos en el Salar de Maricunga y otras regiones estratégicas de Chile.
+              Accede a información y coordina reuniones directas con los responsables de cada proyecto.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 mb-20">
+            <div className="flex flex-wrap items-center gap-4">
               <a 
-                href="#calendly" 
+                href="#maricunga" 
                 className="w-full sm:w-auto px-10 py-5 bg-brand-accent hover:bg-blue-500 text-white font-black rounded-2xl shadow-2xl shadow-brand-accent/20 transition-all transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3 text-lg"
               >
-                Agendar Reunión Privada
+                Ver proyecto destacado
                 <ArrowRight className="w-6 h-6" />
               </a>
               <a 
-                href="#proyecto" 
+                href="#proyectos" 
                 className="w-full sm:w-auto px-10 py-5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold rounded-2xl border border-white/20 shadow-sm transition-all text-center text-lg"
               >
-                Ver Detalle Serie B
+                Otros proyectos
               </a>
-            </div>
-
-            {/* Feature stats for 4K and Mobile */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 border-t border-white/10 pt-16">
-              <div>
-                <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/50 font-black mb-3">Valorización Futura</p>
-                <p className="text-2xl md:text-4xl font-black text-white">+18.4% <span className="text-xs md:text-sm text-emerald-400 font-bold ml-1">Est. Anual</span></p>
-              </div>
-              <div>
-                <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/50 font-black mb-3">Activos en Cartera</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-5 h-5 bg-brand-accent rounded-full shadow-[0_0_15px_rgba(37,99,235,0.5)]" />
-                  <span className="font-black text-sm md:text-lg tracking-tighter text-white uppercase">Litio • Tierras Raras</span>
-                </div>
-              </div>
-              <div className="hidden sm:block">
-                <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/50 font-black mb-3">Jurisdicción</p>
-                <p className="text-sm md:text-xl font-black text-white italic">Atacama • Biobío</p>
-              </div>
-              <div className="hidden md:block">
-                <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/50 font-black mb-3">Inversores</p>
-                <div className="text-sm md:text-xl font-black text-emerald-400 flex items-center gap-3">
-                  <div className="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(52,211,153,0.5)]" />
-                  60+ Activos
-                </div>
-              </div>
             </div>
           </motion.div>
         </div>
